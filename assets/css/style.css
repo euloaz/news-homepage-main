@@ -1,0 +1,279 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter-VariableFont_slnt\,wght.ttf');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+img {
+    width: 100%;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 2.5rem;
+}
+
+p {
+    font-size: 15px;
+    line-height: 1.5rem;
+    color: var(--gris-bleu-fonce);
+}
+
+:root {
+    --orange: hsl(35, 77%, 62%);
+    --rouge: hsl(5, 85%, 63%);
+    --blanc: hsl(36, 100%, 99%);
+    --gris-bleu: hsl(233, 8%, 79%);
+    --gris-bleu-fonce: hsl(236, 13%, 42%);
+    --bleu-tres-fonce: hsl(240, 100%, 5%);
+}
+
+.separator {
+    width: 100%;
+    border-bottom: 1px solid var(--gris-bleu-fonce);
+}
+
+.desktop {
+    display: none;
+}
+.mobile {
+    display: block;
+}
+
+.wrap {
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+header .wrap nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 0;
+}
+
+header .wrap nav ul {
+    display: flex;
+}
+
+header .wrap nav ul li {
+    padding: 0 1rem;
+}
+
+header .wrap nav ul li a {
+    color: var(--gris-bleu-fonce);
+}
+
+main .wrap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+#logo {
+    width: 15%;
+}
+
+#hero {
+    padding-bottom: 3rem;
+}
+
+#hero .image {
+    padding-bottom: 1rem;
+}
+
+#hero .text p {
+    padding: 1rem 0;
+}
+
+#hero .text .lien {
+    padding: 1rem 0;
+}
+
+#hero .text .lien a {
+    background-color: var(--rouge);
+    padding: 1rem 2rem;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    font-size: 15px;
+}
+
+#hero .text .lien a:hover {
+    background-color: white;
+    color: var(--rouge);
+    border: 1px solid var(--rouge);
+    transition: .4s;
+}
+
+#new {
+    background-color: var(--bleu-tres-fonce);
+}
+
+#new .content {
+    padding: 1.5rem 1.5rem 0 1.5rem;
+}
+
+#new h2 {
+    color: var(--orange);
+    font-size: 30px;
+}
+
+#new .article {
+    padding: 1rem 0;
+}
+
+#new .article h3 {
+    color: white;
+    padding-top: 1rem;
+}
+
+#new .article p {
+    color: var(--gris-bleu);
+    padding: 1rem 0;
+}
+
+#top {
+    padding-top: 3rem;
+}
+
+#top .article {
+    display: flex;
+    padding: 1rem 0;
+    gap: 1.5rem;
+}
+
+#top .article .image {
+    width: 45%;
+}
+
+#top .article .text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+
+}
+
+#top .article .text span {
+    color: var(--gris-bleu);
+    font-size: 32px;
+    font-weight: 700;
+}
+
+#top .article .text h2 {
+    font-size: 18px;
+    font-weight: 800;
+}
+footer{
+    padding: 3rem;
+}
+
+@media screen and (min-width: 576px) {
+    .wrap{
+        max-width: 550px;
+    }
+
+    #top .article .text {
+        gap: 0;
+        justify-content: space-evenly;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .wrap {
+        max-width: 730px;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    .desktop {
+        display: block;
+    }
+
+    #logo {
+        width: 8%;
+    }
+
+    #hero {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    #hero h1 {
+        width: 45%;
+        font-size: 48px;
+        line-height: 3rem;
+    }
+
+    #hero .text {
+        width: 50%;
+    }
+
+    #hero .text p {
+        padding: 0 0 2rem 0;
+    }
+    #new, #top {
+        width: 45%;
+    }
+    #top{
+        padding: 0;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .wrap{max-width: 950px;}
+}
+@media screen and (min-width: 1200px) {
+    .wrap {max-width: 1150px}
+    main .wrap{
+        align-items: normal;
+    }
+    #hero {
+        width: 50%;
+        padding-bottom: 0;
+    }
+    #new{
+        width: 47%;
+    }
+    #new .content {
+        padding: 1rem 1rem 0 1rem;
+    }
+    #top {
+        padding-top: 2rem;
+        display: flex;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1400px) {}
