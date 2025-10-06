@@ -15,6 +15,7 @@ html {
 body {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
+    position: relative;
 }
 
 img {
@@ -57,9 +58,10 @@ p {
     border-bottom: 1px solid var(--gris-bleu-fonce);
 }
 
-.desktop{
-    display: none!important;
+.desktop {
+    display: none !important;
 }
+
 .mobile {
     display: block;
 }
@@ -67,6 +69,39 @@ p {
 .wrap {
     max-width: 350px;
     margin: 0 auto;
+}
+
+header #openmenu {
+    display: none;
+}
+
+header #openmenu:checked~ul {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: white;
+    padding-top: 10rem;
+}
+
+header #openmenu:checked~ul li {
+    padding: 1rem 2rem;
+}
+
+header #openmenu:checked~ul li a {
+    color: black;
+}
+
+header label {
+    z-index: 3;
+}
+
+header #openmenu:checked~label>img {
+    content: url('../images/icon-menu-close.svg');
+
 }
 
 header .wrap nav {
@@ -86,9 +121,34 @@ header .wrap nav ul li {
 
 header .wrap nav ul li a {
     color: var(--gris-bleu-fonce);
+    position: relative;
 }
 
-main .wrap{
+header .wrap nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    transition: transform 0.3s ease-out;
+
+    transform-origin: bottom center;
+}
+
+header .wrap nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom center;
+}
+
+header .wrap nav ul li a:hover {
+    color: black;
+    transition: .3s;
+}
+
+main .wrap {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -99,7 +159,10 @@ main .wrap{
 #logo {
     width: 15%;
 }
-
+#logo img:hover{
+    transform: rotate(360deg);
+    transition: .4s;
+}
 #hero {
     padding-bottom: 3rem;
 }
@@ -168,7 +231,10 @@ main .wrap{
     padding: 1rem 0;
     gap: 1.5rem;
 }
-
+#top .article:hover {
+    transform: scale(1.1);
+    transition: .3s;
+}
 #top .article .image {
     width: 45%;
 }
@@ -191,12 +257,13 @@ main .wrap{
     font-size: 18px;
     font-weight: 800;
 }
-footer{
+
+footer {
     padding: 3rem;
 }
 
 @media screen and (min-width: 576px) {
-    .wrap{
+    .wrap {
         max-width: 550px;
     }
 
@@ -216,7 +283,7 @@ footer{
     }
 
     .desktop {
-        display: flex!important;
+        display: flex !important;
     }
 
     #logo {
@@ -243,44 +310,60 @@ footer{
     #hero .text p {
         padding: 0 0 2rem 0;
     }
-    #new, #top {
+
+    #new,
+    #top {
         width: 45%;
     }
-    #top{
+
+    #top {
         padding: 0;
     }
 }
 
 @media screen and (min-width: 992px) {
-    .wrap{max-width: 950px;}
+    .wrap {
+        max-width: 950px;
+    }
 }
+
 @media screen and (min-width: 1200px) {
-    .wrap {max-width: 1150px}
-    main .wrap{
+    .wrap {
+        max-width: 1150px
+    }
+
+    main .wrap {
         align-items: normal;
     }
+
     #hero {
         width: 67%;
         padding-bottom: 0;
     }
+
     #new {
         width: 30%;
     }
+
     #new .content {
         padding: 1rem 1rem 0 1rem;
     }
+
     #top {
         padding-top: 2rem;
         display: flex;
         justify-content: space-between;
         width: 100%;
     }
-    #top .article{
+
+    #top .article {
         width: 33%;
-        
+
     }
 }
 
 @media screen and (min-width: 1400px) {
-    .wrap{max-width: 1350px;}
+    .wrap {
+        max-width: 1350px;
+    }
 }
