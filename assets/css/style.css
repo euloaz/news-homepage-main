@@ -57,8 +57,8 @@ p {
     border-bottom: 1px solid var(--gris-bleu-fonce);
 }
 
-.desktop {
-    display: none;
+.desktop{
+    display: none!important;
 }
 .mobile {
     display: block;
@@ -216,7 +216,7 @@ footer{
     }
 
     .desktop {
-        display: block;
+        display: flex!important;
     }
 
     #logo {
@@ -260,11 +260,11 @@ footer{
         align-items: normal;
     }
     #hero {
-        width: 50%;
+        width: 67%;
         padding-bottom: 0;
     }
-    #new{
-        width: 47%;
+    #new {
+        width: 30%;
     }
     #new .content {
         padding: 1rem 1rem 0 1rem;
@@ -272,8 +272,15 @@ footer{
     #top {
         padding-top: 2rem;
         display: flex;
+        justify-content: space-between;
         width: 100%;
+    }
+    #top .article{
+        width: 33%;
+        
     }
 }
 
-@media screen and (min-width: 1400px) {}
+@media screen and (min-width: 1400px) {
+    .wrap{max-width: 1350px;}
+}
